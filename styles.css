@@ -39,6 +39,21 @@ section {
     margin-bottom: 2em;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+#home img,
+#about img,
+#contact img {
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 footer {
     background-color: #333;
     color: white;
