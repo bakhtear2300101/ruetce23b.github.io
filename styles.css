@@ -1,108 +1,833 @@
-/* styles.css */
-
-.bg {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Ensure the background divs are behind other content */
-    opacity: 0.5; /* Optional: Adjust opacity for visibility */
+*{
+  box-sizing: border-box;
 }
 
-/* Style for the first background */
-.bg {
-    background-image: url('image/image1.jpg');
-    background-size: cover;
-    background-position: center;
+
+  
+:root {
+  --color-background: #001E42;
+  --stroke-width: calc(1em / 18);
+  --font-size: 7vw;
+  --font-weight: 300;
+  --letter-spacing: calc(1em / 8);
+  --color-
 }
 
-/* Style for the second background */
-.bg.bg2 {
-    background-image: url('image/image2.jpg');
-    background-size: cover;
-    background-position: center;
-}
 
-/* Style for the third background */
-.bg.bg3 {
-    background-image: url('image/image3.jpg');
-    background-size: cover;
-    background-position: center;
-}
-
-/* Optional: Additional styling to create effects */
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow: hidden;
-}
-
-.container {
-    position: relative;
-    z-index: 1; /* Ensure your main content is above the background divs */
-    padding: 20px;
-    background-color: white; /* Optional: Add a background color to your content */
-}
 body {
-    font-family: Arial, sans-serif;
+    height: 100vh;
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-header {
-    background-color: #333;
+    padding: 0%;
+    display: grid;
+    place-items: center;
+    background: #001E42;
+    font-family: "Roboto Slab", serif;
     color: white;
-    padding: 1em 0;
+    /* background-image: radial-gradient(#078cf8 2px, transparent 2px), radial-gradient(#078cf8 2px, transparent 2px);
+background-size: 32px 32px;
+background-position: 0 0, 16px 16px;
+background-color: #001e42; */
+/* background:
+      radial-gradient(35.36% 35.36% at 100% 25%,#0000 66%,#078cf8 68% 70%,#0000 72%) 32px 32px/calc(2*32px) calc(2*32px),
+      radial-gradient(35.36% 35.36% at 0    75%,#0000 66%,#078cf8 68% 70%,#0000 72%) 32px 32px/calc(2*32px) calc(2*32px),
+      radial-gradient(35.36% 35.36% at 100% 25%,#0000 66%,#078cf8 68% 70%,#0000 72%) 0 0/calc(2*32px) calc(2*32px),
+      radial-gradient(35.36% 35.36% at 0    75%,#0000 66%,#078cf8 68% 70%,#0000 72%) 0 0/calc(2*32px) calc(2*32px),
+      repeating-conic-gradient(#001e42 0 25%,#0000 0 50%) 0 0/calc(2*32px) calc(2*32px),
+      radial-gradient(#0000 66%,#078cf8 68% 70%,#0000 72%) 0 calc(32px/2)/32px 32px
+      #001e42; */
+
+
+  }
+
+
+  
+  .bg {
+    animation:slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, #1f052b 50%, #011731 50%);
+    bottom:0;
+    left:-50%;
+    opacity:.5;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:-1;
+  }
+  
+  .bg2 {
+    animation-direction:alternate-reverse;
+    animation-duration:4s;
+  }
+  
+  .bg3 {
+    animation-duration:5s;
+  }
+  
+  .flex-cont{
+    width: 100%;
+ 
+
+
+}
+.div1{
+ 
+  justify-content: center;
+  place-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100px;
+  padding: 40px;
+  /* border-bottom-left-radius:50% ; */
+  border-bottom-right-radius:50% ;
+  background: rgba( 255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+ 
+
+ 
+  border-bottom: solid 2px #078CF8  ;
+display: flex;
+position: fixed;
+z-index: 1;
+
+
+
 }
 
-nav ul {
-    list-style-type: none;
+.div1>img{
+width: 90px;
+height: 90px;
+margin: 10px;
+position: relative;
+left: 0px;
+}
+
+.intro {
+  position: relative; /* Make sure the slider stays within the section */
+  height: 400px; /* Adjust height as needed */
+  overflow: hidden; 
+  /* Hide overflowing parts of images */
+
+  border: 0;
+}
+
+.intro img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure images fill the background */
+  opacity: 0; /* Initially hide images */
+  transition: opacity 1s ease-in-out; /* Smooth transition effect */
+}
+
+.intro img.active {
+  opacity: 1; /* Make the current image visible */
+}
+ 
+section {
+  font-family: "Poppins", sans-serif;
+display: flex;
+background: #001E42;
+min-height: 100vh;
+align-items: center;
+justify-content: center;
+
+}
+
+
+.content {
+
+position: relative;
+}
+
+.content h2 {
+color: #fff;
+font-size: 4em;
+position: absolute;
+transform: translate(-50%, -50%);
+}
+
+.content h2:nth-child(1) {
+color: transparent;
+-webkit-text-stroke: 2px #03a9f4;
+}
+
+.content h2:nth-child(2) {
+color: #03a9f4;
+animation: animate 4s ease-in-out infinite;
+}
+
+@keyframes animate {
+0%,
+100% {
+  clip-path: polygon(
+    0% 45%,
+    16% 44%,
+    33% 50%,
+    54% 60%,
+    70% 61%,
+    84% 59%,
+    100% 52%,
+    100% 100%,
+    0% 100%
+  );
+}
+
+50% {
+  clip-path: polygon(
+    0% 60%,
+    15% 65%,
+    34% 66%,
+    51% 62%,
+    67% 50%,
+    84% 45%,
+    100% 46%,
+    100% 100%,
+    0% 100%
+  );
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+HU:wght@100..400&display=swap');
+  
+  /* FOR CSS OWN FILE  */
+   .hyper{
+  display: block;
+  position: relative;
+  font-size: 7vw;
+  background-clip: text;
+    background-image: linear-gradient(to right, #09f1b8, #00a2ff, #ff00d2, #fed90f);
+    color:#001E42;
+    
+    /* font-size:7vw; */
+    font-weight:300;
+    letter-spacing: var(--letter-spacing);
+    padding: calc(--stroke-width / 2);
+    -webkit-text-stroke-color: transparent;
+    -webkit-text-stroke-width: var(--stroke-width);
+  text-align: center;
+  animation: light;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+  place-items: center;
+  align-items: center;
+  font-family:   font-family: "Playwrite HU", cursive;
+  
+  
+   }
+  
+  @keyframes light{
+  
+  0%{
+    background-image: linear-gradient(to right, #09f1b8, #00a2ff, #ff00d2, #fed90f);
+  }
+  40%{
+    background-image: linear-gradient(to right, #1a201f, #053049, #c50ea3, #8f7a07);
+  }
+  
+  80%{
+    background-image: linear-gradient(to right, #9ae424, #d4b70f, #ce0c2c, #fed90f);
+  }
+  
+  100%{
+    background-image: linear-gradient(to right, #09f1b8, #00a2ff, #ff00d2, #fed90f);
+  }
+  
+  
+  }
+ 
+
+  
+  /* 
+   for floatin effect */
+   .float-in {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 1s, transform 1s;
+      width: 100%;
+      height: auto;
+  }
+  
+  .float-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+  }
+  
+  /* bubble stlle */
+  
+  .contender{
+    width: 100%;
+  
+   
+    border-top: 3px solid slateblue;
+    border-bottom: 3px solid slateblue;
+    
+    position: relative;
     display: flex;
     justify-content: center;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    margin: 0 1em;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-main {
-    padding: 2em;
-}
-
-section {
-    margin-bottom: 2em;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
-
-#home img,
-#about img,
-#contact img {
-    width: 50%;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-footer {
-    background-color: #333;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  
+  .typingText {
+    font-size: 6vw;
     color: white;
     text-align: center;
-    padding: 1em 0;
-    position: fixed;
-    bottom: 0;
+    background: -webkit-linear-gradient(#eee, #2d0bc7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: "Sofia", cursive;
+  }
+  
+  .typingText::after {
+    content: "|";
+    color: white;
+    animation: blink 1s infinite;
+  }
+  
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+  
+  
+ 
+  
+  h1 {
+    font-family:monospace;
+  }
+  
+  @keyframes slide {
+    0% {
+      transform:translateX(-25%);
+    }
+    100% {
+      transform:translateX(25%);
+    }
+  }
+  
+  
+  
+
+
+
+  .btn-shine-cr {
+    transition-property: all;
+    transition-duration: 3s;
+     font-size: 2.5em;
+   background:linear-gradient(310deg,#078CF8,purple);
+  
+  text-shadow: 4px 4px 40px rgb(19, 18, 18) ;
+  
+    font-family: "Sofia", cursive;
+    font-weight: bold;
+  padding: 8px;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+  display: block;
+  text-align: center;
+  margin-bottom:50px;
+  animation-name: back; 
+   animation-duration: 4s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+   width: 100%;
+   box-shadow: 1px 2px 30px 40px rgb(12, 2, 29) ;
+
+  }
+  
+
+  
+      
+       
+
+ .btn-shine-dev {
+  transition-property: all;
+  transition-duration: 3s;
+    font-size: 2.5em;
+ background:linear-gradient(310deg,#078CF8,purple);
+width: 100%;
+display: block;
+text-shadow: 4px 4px 40px rgb(19, 18, 18) ;
+
+  font-family: "Sofia", cursive;
+  font-weight: bold;
+padding: 8px;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+display: block;
+text-align: center;
+margin-bottom:50px;
+animation-name: back; 
+ animation-duration: 4s;
+animation-timing-function: ease-in;
+animation-iteration-count: infinite;
+box-shadow: 1px 2px 30px 40px rgb(12, 2, 29) ;
+
+        }
+
+  
+
+        .btn-shine-all {
+          transition-property: all;
+  transition-duration: 3s;
+    font-size: 2.5em;
+ background:linear-gradient(310deg,#078CF8,purple);
+
+text-shadow: 4px 4px 40px rgb(19, 18, 18) ;
+
+  font-family: "Sofia", cursive;
+  font-weight: bolder;
+padding: 8px;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+display: block;
+text-align: center;
+margin-bottom:50px;
+animation-name: back; 
+ animation-duration: 4s;
+animation-timing-function: ease-in;
+animation-iteration-count: infinite;
+box-shadow: 1px 2px 30px 40px rgb(12, 2, 29) ;
+         width: 100%;
+
+
+        }
+
+       
+
+        @keyframes back {
+
+          1%{
+            text-shadow: 4px 4px 4px rgb(247, 245, 248) ;
+          }
+        
+          20%{
+            text-shadow: 1px 2px 8px  rgb(169, 168, 170) ;
+          }
+          40%{
+            text-shadow: 1px 2px 12px rgb(95, 94, 95) ;
+          }
+          60%{
+            text-shadow: 1px 2px 16px rgb(51, 51, 51) ;
+          }
+          80%{
+            text-shadow: 1px 2px 20px rgb(27, 27, 27) ;
+          }
+          100%{
+            text-shadow: 1px 2px 24px rgb(10, 6, 20)) ;
+          }
+        
+        
+          
+          
+        }
+        
+        
+
+
+
+  .card-circle{
+    justify-content: center;
+  
+  padding: 20px;
+  
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  height: 300px;
+  transition-property: height, border-radius,background,box-shadow;
+  transition-duration: 1.5s;
+  margin: 30px;
+  text-align: center;
+  align-items: center;
+  background-color: #001E42;
+  border: 2px solid #03a9f4;
+  
+  
+  
+  
+  }
+  .card-circle>img{
+  border-radius: 100%;
+  display: inline;
+  
+  
+  
+  }
+  .card-circle p{
+  margin: 10px;
+  font-size: 20px;
+  font-family: "Roboto Slab", serif;
+  color: white;
+  
+  }
+  
+  .hidden{
+    display: none;
+    text-align: center;
+  }
+  .hidden i{
+    margin: 5px;
+    font-size: 25px;
+    color: white;
+  }
+
+  .hidden i:hover{
+    color: blue;
+  }
+
+  .card-circle:hover .hidden{
+  display: block;
+  
+  
+  }
+  
+  .card-circle:hover{
+    height: 400px;
+    border-bottom-left-radius:30%;
+    border-bottom-right-radius: 30%;
+    border-top-left-radius: 30%;
+    border-top-right-radius: 30%;
+    transition-property: height, border-radius,background,box-shadow;
+    transition-duration: 1.3s;
+    border:  2px solid #EA8A1C;
+    background: #072E5F;
+    box-shadow: 5px 5px 3px#0B0520;
+  }
+  
+  
+.module-border-wrap {
+  width: 300px;
+  padding: 2rem;
+  border-radius: 20px;
+  margin: 20px;
+ /* margin-bottom: 20px;
+margin-left: 5px;
+margin-right: 5px; */
+  position: relative;
+  background: linear-gradient(to right, rgb(0, 140, 255), purple);
+  padding: 2px;
+display: flex;
+text-align: center;
+transition-property:scale;
+transition-duration:0.7s ;
+
+
+}
+.module-border-wrap:hover {
+scale: 1.05;
+transition-property:scale;
+transition-duration:0.7s ;
+   box-shadow: -3px -5px 10px  rgb(0, 140, 255) ;
+background:linear-gradient(to right, rgb(0, 140, 255), #EB8A1B);
+  }
+.module {
+  background: #001E42;
+  border-radius: 20px;
+  color: white;
+  padding: 10px;
+  transition-property:background;
+  transition-duration: 2s;
+ display: overlay;
+ word-wrap: break-word;
+overflow: hidden;
+width:100%;
+}
+
+.module:hover {
+  background: #072E5F;
+  border-radius: 20px;
+  transition-property:background;
+  transition-duration:1s ;
+  color: white;
+
+
+}
+
+
+.module img{
+  border-radius: 30px;
+}
+
+
+.data{
+
+font-family: "Roboto Slab", serif;
+
+}
+.data h2{
+  display: inline;
+font-size: 3vh;
+margin: 0%;
+}
+.data h3{
+font-size: 25px;
+margin: 0px;
+}
+
+.home{
+font-size: 17px;
+}
+.phone{
+font-size: 13px;
+}
+.social{
+
+}
+.social a{
+
+}
+.social a>i{
+font-size: 30px;
+color: #078CF8;
+margin-top: 10px;
+;
+padding: 13px;
+border: 2px solid #078CF8;
+border-radius: 10px;
+}
+#btn-gray{
+  border: 2px solid gray;
+  color: gray;
+}
+.social a>i:hover{
+background-color:white ;
+color:#001E42;
+border-color: #EB8A1B;
+transition-property:background;
+transition-duration:1s ;
+}
+
+footer{
+  width: 100%;
+  color: wheat;
+  font-size: 20px;
+  background-color: #072e5f;
+  display: block;
+  padding-left: 20px;
+  align-items: center;
+  text-align: center;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* #cr{
+background-color: #0A8CF4;
+width: 100%;
+align-items: center;
+justify-content: center;
+display: flex;
+
+} */
+/* The all btn animation */
+/* The Header effect  */
+
+
+/* End */
+
+
+       
+       
+
+
+
+
+
+
+/* End of general code */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+
+
+}
+
+
+
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+ 
+  
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+  
+  .div1{
+    background: rgba( 255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+   
+  
+   
+    border-bottom: solid 2px #078CF8  ;
+    justify-content: center;
+    place-items: center;
+    text-align: center;
     width: 100%;
+    height: 100px;
+    padding: 40px;
+    /* border-bottom-left-radius:50% ; */
+    border-bottom-right-radius:50% ;
+    border-bottom: solid 5px #078CF8  ;
+  display: flex;
+position: absolute;}
+.wel-text{
+  /* padding: 80px; */
+}
+  
+  
+.content h2 {
+  font-size: 6em;}
+ 
+ 
+  #cr{
+    display: flex;
+    padding: 5px;
+    margin: 5px;
+  }
+
+
+  .container{
+
+    display: grid;
+    grid-template-columns: auto auto ;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+
+  }
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+  .content h2 {
+    font-size: 8em;}
+
+  #cr{
+    display: flex;
+    padding: 5px;
+    margin: 5px;
+  }
+
+
+  .container{
+
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+
+  }
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .content h2 {
+    font-size: 8em;}
+
+
+
+  #cr{
+    display: flex;
+    padding: 5px;
+    margin: 5px;
+  }
+
+
+  .container{
+
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+
+  }
+
 }
