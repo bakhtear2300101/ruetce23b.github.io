@@ -12,6 +12,13 @@
   --letter-spacing: calc(1em / 8);
   --color-
 }
+header {
+  background-color: #4CAF50;
+  padding: 10px;
+  text-align: center;
+  font-size: 24px;
+  color: white;
+}
 
 
 body {
@@ -20,9 +27,9 @@ body {
     padding: 0%;
     display: grid;
     place-items: center;
-    background: #001E42;
-    font-family: "Roboto Slab", serif;
-    color: white;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    color: #333;
     /* background-image: radial-gradient(#078cf8 2px, transparent 2px), radial-gradient(#078cf8 2px, transparent 2px);
 background-size: 32px 32px;
 background-position: 0 0, 16px 16px;
@@ -626,14 +633,13 @@ transition-duration:1s ;
 }
 
 footer{
+ text-align: center;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  position: fixed;
+  bottom: 0;
   width: 100%;
-  color: wheat;
-  font-size: 20px;
-  background-color: #072e5f;
-  display: block;
-  padding-left: 20px;
-  align-items: center;
-  text-align: center;
 
 }
 
@@ -812,7 +818,20 @@ position: absolute;}
   .content h2 {
     font-size: 8em;}
 
+nav {
+  margin: 20px 0;
+  text-align: center;
+}
 
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #4CAF50;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
 
   #cr{
     display: flex;
