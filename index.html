@@ -11,13 +11,12 @@
       font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #1d3557, #457b9d, #a8dadc);
-      background-attachment: fixed;
-      background-size: cover;
-      background-repeat: no-repeat;
       color: #333;
+      position: relative;
+      overflow: hidden;
     }
 
+    /* Moving Gradient Background */
     body::before {
       content: "";
       position: fixed;
@@ -25,9 +24,48 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: url('https://via.placeholder.com/1920x1080') no-repeat center center / cover;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #8fd3f4, #a1c4fd, #cfd9df);
+      background-size: 400% 400%;
+      z-index: -3;
+      animation: gradientShift 10s infinite;
+    }
+
+    /* Animated Geometric Shapes */
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://via.placeholder.com/800x600?text=Shape1') no-repeat center top / 20%;
+      z-index: -2;
       opacity: 0.1;
-      z-index: -1;
+      animation: shapeMove 8s infinite alternate;
+    }
+
+    @keyframes gradientShift {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    @keyframes shapeMove {
+      0% {
+        transform: translateY(0) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-20px) rotate(15deg);
+      }
+      100% {
+        transform: translateY(0) rotate(0deg);
+      }
     }
 
     header {
@@ -52,7 +90,7 @@
     main section {
       margin-bottom: 40px;
       padding: 20px;
-      background: rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.9);
       border-radius: 20px;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
     }
@@ -72,8 +110,7 @@
       border-radius: 4px;
     }
 
-    /* Flex Container for Member Profiles */
-    .member-grid {
+    .profile-grid {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
@@ -81,30 +118,45 @@
     }
 
     .profile-box {
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 10px;
+      background: linear-gradient(135deg, #ffffff, #f7f7f7, #f0f0f0);
+      border-radius: 15px;
       padding: 20px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
       text-align: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      width: calc(33.33% - 40px); /* Adjust width for 3 in a row */
+      width: calc(33.33% - 40px);
       max-width: 300px;
+      position: relative;
     }
 
     .profile-box img {
       width: 100px;
       height: 100px;
       border-radius: 50%;
+      border: 3px solid #1d3557;
       margin-bottom: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .profile-box:hover img {
+      transform: scale(1.1);
     }
 
     .profile-box:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
     }
 
     .social-links {
       margin-top: 10px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .profile-box:hover .social-links {
+      opacity: 1;
+      visibility: visible;
     }
 
     .social-links a {
@@ -113,8 +165,8 @@
     }
 
     .social-links img {
-      width: 24px;
-      height: 24px;
+      width: 28px;
+      height: 28px;
       filter: grayscale(100%);
       transition: filter 0.3s ease;
     }
@@ -133,13 +185,13 @@
 
     @media (max-width: 768px) {
       .profile-box {
-        width: calc(50% - 20px); /* Adjust width for smaller screens */
+        width: calc(50% - 20px);
       }
     }
 
     @media (max-width: 480px) {
       .profile-box {
-        width: 100%; /* Full width for very small screens */
+        width: 100%;
       }
     }
   </style>
@@ -151,20 +203,54 @@
   </header>
 
   <main>
+    <!-- Class Representatives Section -->
+    <section id="class-representatives">
+      <h2>Class Representatives</h2>
+      <hr class="section-line">
+      <div class="profile-grid">
+        <div class="profile-box">
+          <img src="https://via.placeholder.com/150" alt="Fahim Akhar">
+          <h3>A.B.M. FAHIM AKHAR</h3>
+          <p><strong>Roll:</strong> 2300089</p>
+          <div class="social-links">
+            <a href="#"><img src="https://via.placeholder.com/24?text=F" alt="Facebook"></a>
+            <a href="#"><img src="https://via.placeholder.com/24?text=I" alt="Instagram"></a>
+          </div>
+        </div>
+        <div class="profile-box">
+          <img src="https://via.placeholder.com/150" alt="Bakhtear Mahbub">
+          <h3>S. M. BAKHTEAR MAHBUB</h3>
+          <p><strong>Roll:</strong> 2300101</p>
+          <div class="social-links">
+            <a href="#"><img src="https://via.placeholder.com/24?text=F" alt="Facebook"></a>
+            <a href="#"><img src="https://via.placeholder.com/24?text=I" alt="Instagram"></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Developer Section -->
+    <section id="developer">
+      <h2>Developer</h2>
+      <hr class="section-line">
+      <div class="profile-box">
+        <img src="https://via.placeholder.com/150" alt="Developer Image">
+        <h3>S. M. BAKHTEAR MAHBUB</h3>
+        <p><strong>Role:</strong> Lead Developer</p>
+      </div>
+    </section>
+
+    <!-- Lovely Members Section -->
     <section id="lovely-members">
       <h2>Our Lovely Members</h2>
       <hr class="section-line">
-      <div class="member-grid">
+      <div class="profile-grid">
         <div class="profile-box">
           <img src="https://via.placeholder.com/150" alt="Alice">
           <h3>Alice</h3>
           <p><strong>Roll:</strong> 54321</p>
           <p><strong>Hometown:</strong> City &#127968;</p>
           <p><strong>College:</strong> XYZ College &#127891;</p>
-          <div class="social-links">
-            <a href="#"><img src="https://via.placeholder.com/24?text=F" alt="Facebook"></a>
-            <a href="#"><img src="https://via.placeholder.com/24?text=I" alt="Instagram"></a>
-          </div>
         </div>
         <div class="profile-box">
           <img src="https://via.placeholder.com/150" alt="Bob">
@@ -172,10 +258,546 @@
           <p><strong>Roll:</strong> 54322</p>
           <p><strong>Hometown:</strong> Village &#127968;</p>
           <p><strong>College:</strong> ABC College &#127891;</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2024 Department of Civil Engineering. All rights reserved.
+  </footer>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CE 23(B)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    /* General Body Styling */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Moving Gradient Background */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #8fd3f4, #a1c4fd, #cfd9df);
+      background-size: 400% 400%;
+      z-index: -3;
+      animation: gradientShift 10s infinite;
+    }
+
+    /* Animated Geometric Shapes */
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://via.placeholder.com/800x600?text=Shape1') no-repeat center top / 20%;
+      z-index: -2;
+      opacity: 0.1;
+      animation: shapeMove 8s infinite alternate;
+    }
+
+    @keyframes gradientShift {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    @keyframes shapeMove {
+      0% {
+        transform: translateY(0) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-20px) rotate(15deg);
+      }
+      100% {
+        transform: translateY(0) rotate(0deg);
+      }
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin: 0;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin: 10px 0 0;
+    }
+
+    main section {
+      margin-bottom: 40px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: #1d3557;
+      margin-bottom: 10px;
+    }
+
+    .section-line {
+      width: 80px;
+      height: 4px;
+      background-color: #1d3557;
+      margin: 10px auto 30px;
+      border-radius: 4px;
+    }
+
+    .profile-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .profile-box {
+      background: linear-gradient(135deg, #ffffff, #f7f7f7, #f0f0f0);
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      width: calc(33.33% - 40px);
+      max-width: 300px;
+      position: relative;
+    }
+
+    .profile-box img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 3px solid #1d3557;
+      margin-bottom: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .profile-box:hover img {
+      transform: scale(1.1);
+    }
+
+    .profile-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .social-links {
+      margin-top: 10px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .profile-box:hover .social-links {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .social-links a {
+      margin: 0 5px;
+      display: inline-block;
+    }
+
+    .social-links img {
+      width: 28px;
+      height: 28px;
+      filter: grayscale(100%);
+      transition: filter 0.3s ease;
+    }
+
+    .social-links img:hover {
+      filter: grayscale(0%);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .profile-box {
+        width: calc(50% - 20px);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .profile-box {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome All <br> to the Department of Civil Engineering 23 Series <br>Section B</h1>
+    <p>Your journey begins here!</p>
+  </header>
+
+  <main>
+    <!-- Class Representatives Section -->
+    <section id="class-representatives">
+      <h2>Class Representatives</h2>
+      <hr class="section-line">
+      <div class="profile-grid">
+        <div class="profile-box">
+          <img src="https://via.placeholder.com/150" alt="Fahim Akhar">
+          <h3>A.B.M. FAHIM AKHAR</h3>
+          <p><strong>Roll:</strong> 2300089</p>
           <div class="social-links">
             <a href="#"><img src="https://via.placeholder.com/24?text=F" alt="Facebook"></a>
             <a href="#"><img src="https://via.placeholder.com/24?text=I" alt="Instagram"></a>
           </div>
+        </div>
+        <div class="profile-box">
+          <img src="https://via.placeholder.com/150" alt="Bakhtear Mahbub">
+          <h3>S. M. BAKHTEAR MAHBUB</h3>
+          <p><strong>Roll:</strong> 2300101</p>
+          <div class="social-links">
+            <a href="#"><img src="https://via.placeholder.com/24?text=F" alt="Facebook"></a>
+            <a href="#"><img src="https://via.placeholder.com/24?text=I" alt="Instagram"></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Developer Section -->
+    <section id="developer">
+      <h2>Developer</h2>
+      <hr class="section-line">
+      <div class="profile-box">
+        <img src="https://via.placeholder.com/150" alt="Developer Image">
+        <h3>S. M. BAKHTEAR MAHBUB</h3>
+        <p><strong>Role:</strong> Lead Developer</p>
+      </div>
+    </section>
+
+    <!-- Lovely Members Section -->
+    <section id="lovely-members">
+      <h2>Our Lovely Members</h2>
+      <hr class="section-line">
+      <div class="profile-grid">
+        <div class="profile-box">
+          <img src="https://via.placeholder.com/150" alt="Alice">
+          <h3>Alice</h3>
+          <p><strong>Roll:</strong> 54321</p>
+          <p><strong>Hometown:</strong> City &#127968;</p>
+          <p><strong>College:</strong> XYZ College &#127891;</p>
+        </div>
+        <div class="profile-box">
+          <img src="https://via.placeholder.com/150" alt="Bob">
+          <h3>Bob</h3>
+          <p><strong>Roll:</strong> 54322</p>
+          <p><strong>Hometown:</strong> Village &#127968;</p>
+          <p><strong>College:</strong> ABC College &#127891;</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2024 Department of Civil Engineering. All rights reserved.
+  </footer>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CE 23(B)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    /* General Body Styling */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Moving Gradient Background */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #8fd3f4, #a1c4fd, #cfd9df);
+      background-size: 400% 400%;
+      z-index: -3;
+      animation: gradientShift 10s infinite;
+    }
+
+    /* Animated Geometric Shapes */
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://via.placeholder.com/800x600?text=Shape1') no-repeat center top / 20%;
+      z-index: -2;
+      opacity: 0.1;
+      animation: shapeMove 8s infinite alternate;
+    }
+
+    @keyframes gradientShift {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    @keyframes shapeMove {
+      0% {
+        transform: translateY(0) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-20px) rotate(15deg);
+      }
+      100% {
+        transform: translateY(0) rotate(0deg);
+      }
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin: 0;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin: 10px 0 0;
+    }
+
+    main section {
+      margin-bottom: 40px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: #1d3557;
+      margin-bottom: 10px;
+    }
+
+    .section-line {
+      width: 80px;
+      height: 4px;
+      background-color: #1d3557;
+      margin: 10px auto 30px;
+      border-radius: 4px;
+    }
+
+    .profile-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .profile-box {
+      background: linear-gradient(135deg, #ffffff, #f7f7f7, #f0f0f0);
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      width: calc(33.33% - 40px);
+      max-width: 300px;
+      position: relative;
+    }
+
+    .profile-box img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 3px solid #1d3557;
+      margin-bottom: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .profile-box:hover img {
+      transform: scale(1.1);
+    }
+
+    .profile-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .social-links {
+      margin-top: 10px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .profile-box:hover .social-links {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .social-links a {
+      margin: 0 5px;
+      display: inline-block;
+    }
+
+    .social-links img {
+      width: 28px;
+      height: 28px;
+      filter: grayscale(100%);
+      transition: filter 0.3s ease;
+    }
+
+    .social-links img:hover {
+      filter: grayscale(0%);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .profile-box {
+        width: calc(50% - 20px);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .profile-box {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome All <br> to the Department of Civil Engineering 23 Series <br>Section B</h1>
+    <p>Your journey begins here!</p>
+  </header>
+
+  <main>
+    <!-- Class Representatives Section -->
+    <section id="class-representatives">
+      <h2>Class Representatives</h2>
+      <hr class="section-line">
+      <div class="profile-grid">
+        <div class="profile-box">
+          <img src="https://via.placeholder.com/150" alt="Fahim Akhar">
+          <h3>A.B.M. FAHIM AKHAR</h3>
+          <p><strong>Roll:</strong> 2300089</p>
+          <div class="social-links">
+            <a href="#"><img src="https://via.placeholder.com/24?text=F" alt="Facebook"></a>
+            <a href="#"><img src="https://via.placeholder.com/24?text=I" alt="Instagram"></a>
+          </div>
+        </div>
+        <div class="profile-box">
+          <img src="https://via.placeholder.com/150" alt="Bakhtear Mahbub">
+          <h3>S. M. BAKHTEAR MAHBUB</h3>
+          <p><strong>Roll:</strong> 2300101</p>
+          <div class="social-links">
+            <a href="#"><img src="https://via.placeholder.com/24?text=F" alt="Facebook"></a>
+            <a href="#"><img src="https://via.placeholder.com/24?text=I" alt="Instagram"></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Developer Section -->
+    <section id="developer">
+      <h2>Developer</h2>
+      <hr class="section-line">
+      <div class="profile-box">
+        <img src="https://via.placeholder.com/150" alt="Developer Image">
+        <h3>S. M. BAKHTEAR MAHBUB</h3>
+        <p><strong>Role:</strong> Lead Developer</p>
+      </div>
+    </section>
+
+    <!-- Lovely Members Section -->
+    <section id="lovely-members">
+      <h2>Our Lovely Members</h2>
+      <hr class="section-line">
+      <div class="profile-grid">
+        <div class="profile-box">
+          <img src="https://via.placeholder.com/150" alt="Alice">
+          <h3>Alice</h3>
+          <p><strong>Roll:</strong> 54321</p>
+          <p><strong>Hometown:</strong> City &#127968;</p>
+          <p><strong>College:</strong> XYZ College &#127891;</p>
+        </div>
+        <div class="profile-box">
+          <img src="https://via.placeholder.com/150" alt="Bob">
+          <h3>Bob</h3>
+          <p><strong>Roll:</strong> 54322</p>
+          <p><strong>Hometown:</strong> Village &#127968;</p>
+          <p><strong>College:</strong> ABC College &#127891;</p>
         </div>
       </div>
     </section>
