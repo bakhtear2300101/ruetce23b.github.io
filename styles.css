@@ -1,64 +1,3 @@
-/* General Body Styling */
-body {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(to bottom, #ffffff, #d1e7ff, #a8c9ff, #8abaff);
-  color: #333;
-  background-attachment: fixed;
-}
-
-/* Header Styling */
-header {
-  background: linear-gradient(135deg, #004080, #0066cc);
-  color: white;
-  text-align: center;
-  padding: 50px 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-header h1 {
-  font-size: 2.8rem;
-  margin: 0;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-header p {
-  font-size: 1.2rem;
-  margin: 10px 0 0;
-}
-
-/* Section Styling */
-main section {
-  margin-bottom: 40px;
-}
-
-h2 {
-  text-align: center;
-  font-size: 2rem;
-  color: #004080;
-  margin-bottom: 10px;
-}
-
-.section-line {
-  width: 80px;
-  height: 4px;
-  background-color: #004080;
-  margin: 10px auto 30px;
-  border: none;
-  border-radius: 4px;
-}
-
-/* Box Styling */
-.box {
-  background: #ffffff;
-  border-radius: 20px;
-  padding: 20px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-  margin: 0 auto 30px;
-  max-width: 900px;
-}
-
 /* Profile Box Styling */
 .profile-box {
   background: #f8f9fa;
@@ -66,6 +5,8 @@ h2 {
   padding: 20px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   text-align: center;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .profile-box img {
@@ -75,62 +16,39 @@ h2 {
   margin-bottom: 10px;
 }
 
-.name {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #004080;
+.profile-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-.cr-card,
-.developer-card,
-.member-card {
+/* Social Links Styling */
+.social-links {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.profile-box:hover .social-links {
+  opacity: 1;
+  visibility: visible;
+}
+
+.social-links a {
+  margin: 0 5px;
   display: inline-block;
-  width: 100%;
-  margin: 10px;
-  text-align: center;
-}
-
-/* Hidden Links (Facebook, Instagram, etc.) */
-.social-links .social-link {
-  display: block;
-  margin: 5px;
-}
-
-.social-links .hidden-link {
-  display: none;
 }
 
 .social-links img {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
 }
 
-/* Social Media Logo Styling */
-.home-logo,
-.college-logo {
-  width: 20px;
-  height: 20px;
-  vertical-align: middle;
-  margin-left: 5px;
-}
-
-.members-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 20px;
-  padding: 0 20px;
-}
-
-.member-card {
-  text-align: center;
-  background: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-  padding: 10px;
-}
-
-/* Hover Effects */
-.cr-card:hover, .developer-card:hover, .member-card:hover {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  transform: translateY(-5px);
+.social-links img:hover {
+  filter: grayscale(0%);
 }
