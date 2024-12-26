@@ -59,54 +59,78 @@ h2 {
   max-width: 900px;
 }
 
-/* Class Representatives Section */
-.cr-container {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.cr-card {
-  text-align: center;
+/* Profile Box Styling */
+.profile-box {
+  background: #f8f9fa;
+  border-radius: 10px;
   padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
-.cr-card img {
+.profile-box img {
   width: 100px;
   height: 100px;
   border-radius: 50%;
   margin-bottom: 10px;
 }
 
-/* Developer Section */
-.developer-card {
+.name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #004080;
+}
+
+.cr-card,
+.developer-card,
+.member-card {
+  display: inline-block;
+  width: 100%;
+  margin: 10px;
   text-align: center;
-  padding: 20px;
 }
 
-.developer-card img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  margin-bottom: 10px;
+/* Hidden Links (Facebook, Instagram, etc.) */
+.social-links .social-link {
+  display: block;
+  margin: 5px;
 }
 
-/* Lovely Members Section */
+.social-links .hidden-link {
+  display: none;
+}
+
+.social-links img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Social Media Logo Styling */
+.home-logo,
+.college-logo {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
 .members-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
   padding: 0 20px;
 }
 
 .member-card {
   text-align: center;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
 }
 
-.member-card img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  margin-bottom: 5px;
+/* Hover Effects */
+.cr-card:hover, .developer-card:hover, .member-card:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
 }
