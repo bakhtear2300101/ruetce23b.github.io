@@ -45,46 +45,15 @@
     }
 
     @keyframes move {
-      0% {
-        transform: translateY(0) rotate(0);
-      }
-      50% {
-        transform: translateY(-100px) rotate(180deg);
-      }
-      100% {
-        transform: translateY(0) rotate(360deg);
-      }
-    }
-
-    .background-elements span:nth-child(1) {
-      left: 10%;
-      top: 20%;
-      animation-duration: 18s;
-    }
-
-    .background-elements span:nth-child(2) {
-      left: 70%;
-      top: 30%;
-      animation-duration: 22s;
-    }
-
-    .background-elements span:nth-child(3) {
-      left: 50%;
-      top: 60%;
-      animation-duration: 25s;
-    }
-
-    .background-elements span:nth-child(4) {
-      left: 90%;
-      top: 10%;
-      animation-duration: 20s;
+      0% { transform: translateY(0) rotate(0); }
+      50% { transform: translateY(-100px) rotate(180deg); }
+      100% { transform: translateY(0) rotate(360deg); }
     }
 
     /* Header */
     header {
       text-align: center;
       padding: 50px 20px;
-      position: relative;
       color: white;
     }
 
@@ -114,7 +83,7 @@
     }
 
     /* Section */
-    main section {
+    section {
       padding: 40px 20px;
       border-radius: 15px;
       margin: 20px auto;
@@ -135,6 +104,68 @@
       background: white;
       margin: 10px auto 30px;
       border-radius: 3px;
+    }
+
+    /* Profile Box */
+    .profile-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .profile-box {
+      text-align: center;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: white;
+      padding: 20px;
+      border-radius: 15px;
+      width: 250px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .profile-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .profile-box img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 5px solid white;
+      margin-bottom: 15px;
+    }
+
+    .profile-box h3 {
+      margin: 10px 0;
+      font-size: 1.2rem;
+    }
+
+    .profile-box p {
+      margin: 5px 0;
+      font-size: 0.9rem;
+    }
+
+    .social-links {
+      margin-top: 10px;
+    }
+
+    .social-links a {
+      margin: 0 5px;
+      display: inline-block;
+    }
+
+    .social-links img {
+      width: 30px;
+      height: 30px;
+      filter: grayscale(100%);
+      transition: filter 0.3s;
+    }
+
+    .social-links img:hover {
+      filter: grayscale(0%);
     }
 
     /* Footer */
@@ -174,8 +205,8 @@
           <h3>A.B.M. FAHIM AKHAR</h3>
           <p><strong>Roll:</strong> 2300089</p>
           <div class="social-links">
-            <a href="#" target="_blank"><img src="https://via.placeholder.com/35?text=F" alt="Facebook"></a>
-            <a href="#" target="_blank"><img src="https://via.placeholder.com/35?text=I" alt="Instagram"></a>
+            <a href="#" target="_blank"><img src="https://via.placeholder.com/30?text=F" alt="Facebook"></a>
+            <a href="#" target="_blank"><img src="https://via.placeholder.com/30?text=I" alt="Instagram"></a>
           </div>
         </div>
         <div class="profile-box">
@@ -183,51 +214,38 @@
           <h3>S.M. BAKHTEAR MAHBUB</h3>
           <p><strong>Roll:</strong> 2300101</p>
           <div class="social-links">
-            <a href="#" target="_blank"><img src="https://www.facebook.com/bakhtearmahbubridwon/" alt="Facebook"></a>
-            <a href="#" target="_blank"><img src="https://via.placeholder.com/35?text=I" alt="Instagram"></a>
-          </div>
-        </div>
-      </div>
-    </section>
-     <!-- Developer Section -->
-    <section id="developer">
-      <h2>Developer</h2>
-      <hr class="section-line">
-      <div class="profile-grid">
-        <div class="profile-box">
-          <img src="https://via.placeholder.com/150" alt="Developer Image">
-          <h3>S. M. BAKHTEAR MAHBUB</h3>
-          <p><strong>Role:</strong> Lead Developer</p>
-          <div class="social-links">
-            <a href="#" target="_blank">
-              <img src="https://via.placeholder.com/24?text=F" alt="Facebook">
-            </a>
-            <a href="#" target="_blank">
-              <img src="https://via.placeholder.com/24?text=I" alt="Instagram">
-            </a>
+            <a href="#" target="_blank"><img src="https://via.placeholder.com/30?text=F" alt="Facebook"></a>
+            <a href="#" target="_blank"><img src="https://via.placeholder.com/30?text=I" alt="Instagram"></a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Lovely Members Section -->
-    <section id="lovely-members">
+    <!-- Developer Section -->
+    <section>
+      <h2>Developer</h2>
+      <hr class="section-line">
+      <div class="profile-grid">
+        <div class="profile-box">
+          <img src="https://via.placeholder.com/180" alt="Developer Image">
+          <h3>S.M. BAKHTEAR MAHBUB</h3>
+          <p>Developing Excellence</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Members Section -->
+    <section>
       <h2>Our Lovely Members</h2>
       <hr class="section-line">
       <div class="profile-grid">
         <div class="profile-box">
-          <img src="https://via.placeholder.com/150" alt="Member">
-          <h3>Member Name</h3>
+          <img src="https://via.placeholder.com/180" alt="Member Image">
+          <h3>Alice</h3>
           <p><strong>Roll:</strong> 54321</p>
-          <p><strong>Hometown:</strong> City</p>
-          <p><strong>College:</strong> XYZ College</p>
           <div class="social-links">
-            <a href="#" target="_blank">
-              <img src="https://via.placeholder.com/24?text=F" alt="Facebook">
-            </a>
-            <a href="#" target="_blank">
-              <img src="https://via.placeholder.com/24?text=I" alt="Instagram">
-            </a>
+            <a href="#" target="_blank"><img src="https://via.placeholder.com/30?text=F" alt="Facebook"></a>
+            <a href="#" target="_blank"><img src="https://via.placeholder.com/30?text=I" alt="Instagram"></a>
           </div>
         </div>
         <!-- Add more member profiles here -->
@@ -236,7 +254,7 @@
   </main>
 
   <footer>
-    &copy; 2024 Department of Civil Engineering.
+    &copy; 2024 Department of Civil Engineering. All rights reserved.
   </footer>
 </body>
 </html>
