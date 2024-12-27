@@ -3,134 +3,88 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CE 23(B) - Animated</title>
+  <title>CE 23(B) - Vibrant Profiles</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-    /* General Body Styling */
+    /* General Styling */
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
       color: #333;
-      scroll-behavior: smooth;
-      position: relative;
-      overflow-x: hidden;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #8ec5fc, #e0c3fc);
+      background-size: 300% 300%;
+      animation: gradientBG 15s ease infinite;
     }
 
-    /* Moving Gradient Background */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #8fd3f4, #a1c4fd, #cfd9df);
-      background-size: 400% 400%;
-      z-index: -3;
-      animation: gradientShift 10s infinite;
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
-    @keyframes gradientShift {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
-    }
-
-    /* Header Styling */
+    /* Header */
     header {
-      background: rgba(0, 0, 0, 0.6);
-      color: white;
       text-align: center;
       padding: 50px 20px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      color: white;
+      background: rgba(0, 0, 0, 0.5);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
 
     header h1 {
       font-size: 2.8rem;
       margin: 0;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
     }
 
     header p {
       font-size: 1.2rem;
-      margin: 10px 0 0;
+      margin-top: 10px;
     }
 
-    /* Profile Section */
+    /* Section */
     main section {
-      margin-bottom: 40px;
-      padding: 20px;
-      background: linear-gradient(135deg, #ffffff, #f7f9fc);
-      border-radius: 20px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      padding: 40px 20px;
+      border-radius: 15px;
+      margin: 20px auto;
+      max-width: 1200px;
     }
 
     h2 {
       text-align: center;
       font-size: 2rem;
-      color: #1d3557;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
+      color: white;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
     }
 
     .section-line {
       width: 80px;
-      height: 4px;
-      background-color: #1d3557;
+      height: 5px;
+      background: white;
       margin: 10px auto 30px;
-      border-radius: 4px;
+      border-radius: 3px;
     }
 
     .profile-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
       justify-content: center;
+      gap: 30px;
     }
 
-    /* Profile Box */
+    /* Profile Boxes */
     .profile-box {
-      background: linear-gradient(135deg, #ffdde1, #f8cdda, #d5f3fe, #c3c7ff);
-      border-radius: 15px;
-      padding: 20px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      border-radius: 20px;
+      padding: 30px;
       text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      width: calc(33.33% - 40px);
-      max-width: 300px;
+      width: 300px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
       position: relative;
-      animation: float 4s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0% {
-        transform: translateY(0px);
-      }
-      50% {
-        transform: translateY(-10px);
-      }
-      100% {
-        transform: translateY(0px);
-      }
-    }
-
-    .profile-box img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      border: 3px solid #1d3557;
-      margin-bottom: 10px;
-      transition: transform 0.3s ease;
-    }
-
-    .profile-box:hover img {
-      transform: scale(1.1);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
     .profile-box:hover {
@@ -138,126 +92,119 @@
       box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
     }
 
-    /* Social Links */
+    .profile-box img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 6px solid white;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      margin-bottom: 15px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .profile-box:hover img {
+      transform: scale(1.1);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .profile-box h3 {
+      color: white;
+      margin: 10px 0 5px;
+    }
+
+    .profile-box p {
+      color: white;
+      margin: 5px 0;
+    }
+
     .social-links {
-      margin-top: 10px;
       display: flex;
       justify-content: center;
       gap: 10px;
+      margin-top: 10px;
     }
 
     .social-links a {
-      width: 30px;
-      height: 30px;
+      width: 35px;
+      height: 35px;
       display: inline-block;
     }
 
     .social-links img {
       width: 100%;
       height: 100%;
-      filter: grayscale(100%);
       border-radius: 50%;
-      transition: transform 0.3s ease, filter 0.3s ease;
+      filter: grayscale(100%);
+      transition: filter 0.3s, transform 0.3s;
     }
 
     .social-links img:hover {
       filter: grayscale(0%);
-      transform: scale(1.2) rotate(360deg);
+      transform: rotate(360deg) scale(1.2);
     }
 
     footer {
       text-align: center;
       padding: 20px;
-      background: rgba(0, 0, 0, 0.7);
       color: white;
-      font-size: 0.9rem;
+      background: rgba(0, 0, 0, 0.7);
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Welcome All <br> to the Department of Civil Engineering 23 Series <br>Section B</h1>
-    <p>Your journey begins here!</p>
+    <h1>Welcome to CE 23(B)</h1>
+    <p>Explore your vibrant community!</p>
   </header>
 
   <main>
     <!-- Class Representatives Section -->
-    <section id="class-representatives">
+    <section>
       <h2>Class Representatives</h2>
       <hr class="section-line">
       <div class="profile-grid">
         <div class="profile-box">
-          <img src="https://via.placeholder.com/150" alt="Fahim Akhar">
+          <img src="https://via.placeholder.com/180" alt="CR Image">
           <h3>A.B.M. FAHIM AKHAR</h3>
           <p><strong>Roll:</strong> 2300089</p>
           <div class="social-links">
-            <a href="#" target="_blank"><img src="https://via.placeholder.com/30?text=F" alt="Facebook"></a>
-            <a href="#" target="_blank"><img src="https://via.placeholder.com/30?text=I" alt="Instagram"></a>
+            <a href="#" target="_blank"><img src="https://via.placeholder.com/35?text=F" alt="Facebook"></a>
+            <a href="#" target="_blank"><img src="https://via.placeholder.com/35?text=I" alt="Instagram"></a>
           </div>
         </div>
-      </div>
-    </section>
-     <!-- Developer Section -->
-    <section id="developer">
-      <h2>Developer</h2>
-      <hr class="section-line">
-      <div class="profile-grid">
         <div class="profile-box">
-          <img src="https://via.placeholder.com/150" alt="Developer Image">
-          <h3>S. M. BAKHTEAR MAHBUB</h3>
-          <p><strong>Role:</strong> Lead Developer</p>
+          <img src="https://via.placeholder.com/180" alt="CR Image">
+          <h3>S.M. BAKHTEAR MAHBUB</h3>
+          <p><strong>Roll:</strong> 2300101</p>
           <div class="social-links">
-            <a href="#" target="_blank">
-              <img src="https://via.placeholder.com/24?text=F" alt="Facebook">
-            </a>
-            <a href="#" target="_blank">
-              <img src="https://via.placeholder.com/24?text=I" alt="Instagram">
-            </a>
+            <a href="#" target="_blank"><img src="https://via.placeholder.com/35?text=F" alt="Facebook"></a>
+            <a href="#" target="_blank"><img src="https://via.placeholder.com/35?text=I" alt="Instagram"></a>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Lovely Members Section -->
-    <section id="lovely-members">
+    <section>
       <h2>Our Lovely Members</h2>
       <hr class="section-line">
       <div class="profile-grid">
         <div class="profile-box">
-          <img src="https://via.placeholder.com/150" alt="Member">
-          <h3>Member Name</h3>
-          <p><strong>Roll:</strong> 54321</p>
-          <p><strong>Hometown:</strong> City</p>
-          <p><strong>College:</strong> XYZ College</p>
+          <img src="https://via.placeholder.com/180" alt="Member Image">
+          <h3>John Doe</h3>
+          <p><strong>Roll:</strong> 2300056</p>
+          <p><strong>Hometown:</strong> Hometown City</p>
           <div class="social-links">
-            <a href="#" target="_blank">
-              <img src="https://via.placeholder.com/24?text=F" alt="Facebook">
-            </a>
-            <a href="#" target="_blank">
-              <img src="https://via.placeholder.com/24?text=I" alt="Instagram">
-            </a>
+            <a href="#" target="_blank"><img src="https://via.placeholder.com/35?text=F" alt="Facebook"></a>
+            <a href="#" target="_blank"><img src="https://via.placeholder.com/35?text=I" alt="Instagram"></a>
           </div>
         </div>
-        <!-- Add more member profiles here -->
       </div>
     </section>
   </main>
 
   <footer>
-    &copy; 2024 Department of Civil Engineering. All rights reserved.
+    &copy; 2024 Department of Civil Engineering.
   </footer>
-
-  <script>
-    document.querySelectorAll('.social-links img').forEach(icon => {
-      icon.addEventListener('mouseover', () => {
-        icon.style.transition = 'transform 0.3s ease, filter 0.3s ease';
-        icon.style.transform = 'scale(1.2) rotate(360deg)';
-      });
-
-      icon.addEventListener('mouseout', () => {
-        icon.style.transform = 'scale(1)';
-      });
-    });
-  </script>
 </body>
 </html>
