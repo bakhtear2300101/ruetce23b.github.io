@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CE 23(B) - Vibrant Profiles</title>
+  <title>RUET CE 23(B)</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     /* General Styling */
@@ -15,6 +15,7 @@
       background: linear-gradient(135deg, #ff9a9e, #fad0c4, #8ec5fc, #e0c3fc);
       background-size: 300% 300%;
       animation: gradientBG 15s ease infinite;
+      overflow-x: hidden;
     }
 
     @keyframes gradientBG {
@@ -23,24 +24,93 @@
       100% { background-position: 0% 50%; }
     }
 
+    /* Decorative Elements */
+    .background-elements {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .background-elements span {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      animation: move 20s infinite ease-in-out;
+    }
+
+    @keyframes move {
+      0% {
+        transform: translateY(0) rotate(0);
+      }
+      50% {
+        transform: translateY(-100px) rotate(180deg);
+      }
+      100% {
+        transform: translateY(0) rotate(360deg);
+      }
+    }
+
+    .background-elements span:nth-child(1) {
+      left: 10%;
+      top: 20%;
+      animation-duration: 18s;
+    }
+
+    .background-elements span:nth-child(2) {
+      left: 70%;
+      top: 30%;
+      animation-duration: 22s;
+    }
+
+    .background-elements span:nth-child(3) {
+      left: 50%;
+      top: 60%;
+      animation-duration: 25s;
+    }
+
+    .background-elements span:nth-child(4) {
+      left: 90%;
+      top: 10%;
+      animation-duration: 20s;
+    }
+
     /* Header */
     header {
       text-align: center;
       padding: 50px 20px;
+      position: relative;
       color: white;
-      background: rgba(0, 0, 0, 0.5);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
 
-    header h1 {
-      font-size: 2.8rem;
+    .logo-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .logo-section img {
+      width: 100px;
+      height: 100px;
+      margin-right: 15px;
+    }
+
+    .logo-section h1 {
+      font-size: 2.5rem;
       margin: 0;
       text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
     }
 
-    header p {
-      font-size: 1.2rem;
-      margin-top: 10px;
+    .welcome-message {
+      font-size: 1.5rem;
+      margin-top: 15px;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     }
 
     /* Section */
@@ -67,82 +137,7 @@
       border-radius: 3px;
     }
 
-    .profile-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-    }
-
-    /* Profile Boxes */
-    .profile-box {
-      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-      border-radius: 20px;
-      padding: 30px;
-      text-align: center;
-      width: 300px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .profile-box:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-    }
-
-    .profile-box img {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      border: 6px solid white;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-      margin-bottom: 15px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .profile-box:hover img {
-      transform: scale(1.1);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-    }
-
-    .profile-box h3 {
-      color: white;
-      margin: 10px 0 5px;
-    }
-
-    .profile-box p {
-      color: white;
-      margin: 5px 0;
-    }
-
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 10px;
-    }
-
-    .social-links a {
-      width: 35px;
-      height: 35px;
-      display: inline-block;
-    }
-
-    .social-links img {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      filter: grayscale(100%);
-      transition: filter 0.3s, transform 0.3s;
-    }
-
-    .social-links img:hover {
-      filter: grayscale(0%);
-      transform: rotate(360deg) scale(1.2);
-    }
-
+    /* Footer */
     footer {
       text-align: center;
       padding: 20px;
@@ -152,9 +147,20 @@
   </style>
 </head>
 <body>
+  <!-- Background Decorative Elements -->
+  <div class="background-elements">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
   <header>
-    <h1>Welcome to CE 23(B)</h1>
-    <p>Explore your vibrant community!</p>
+    <div class="logo-section">
+      <img src="https://via.placeholder.com/100" alt="RUET Logo">
+      <h1>RUET CE 23(B)</h1>
+    </div>
+    <p class="welcome-message">We Welcome You to the Department of Civil Engineering 23 Series Section B</p>
   </header>
 
   <main>
@@ -177,28 +183,54 @@
           <h3>S.M. BAKHTEAR MAHBUB</h3>
           <p><strong>Roll:</strong> 2300101</p>
           <div class="social-links">
-            <a href="#" target="_blank"><img src="https://via.placeholder.com/35?text=F" alt="Facebook"></a>
+            <a href="#" target="_blank"><img src="https://www.facebook.com/bakhtearmahbubridwon/" alt="Facebook"></a>
             <a href="#" target="_blank"><img src="https://via.placeholder.com/35?text=I" alt="Instagram"></a>
+          </div>
+        </div>
+      </div>
+    </section>
+     <!-- Developer Section -->
+    <section id="developer">
+      <h2>Developer</h2>
+      <hr class="section-line">
+      <div class="profile-grid">
+        <div class="profile-box">
+          <img src="https://via.placeholder.com/150" alt="Developer Image">
+          <h3>S. M. BAKHTEAR MAHBUB</h3>
+          <p><strong>Role:</strong> Lead Developer</p>
+          <div class="social-links">
+            <a href="#" target="_blank">
+              <img src="https://via.placeholder.com/24?text=F" alt="Facebook">
+            </a>
+            <a href="#" target="_blank">
+              <img src="https://via.placeholder.com/24?text=I" alt="Instagram">
+            </a>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Lovely Members Section -->
-    <section>
+    <section id="lovely-members">
       <h2>Our Lovely Members</h2>
       <hr class="section-line">
       <div class="profile-grid">
         <div class="profile-box">
-          <img src="https://via.placeholder.com/180" alt="Member Image">
-          <h3>John Doe</h3>
-          <p><strong>Roll:</strong> 2300056</p>
-          <p><strong>Hometown:</strong> Hometown City</p>
+          <img src="https://via.placeholder.com/150" alt="Member">
+          <h3>Member Name</h3>
+          <p><strong>Roll:</strong> 54321</p>
+          <p><strong>Hometown:</strong> City</p>
+          <p><strong>College:</strong> XYZ College</p>
           <div class="social-links">
-            <a href="#" target="_blank"><img src="https://via.placeholder.com/35?text=F" alt="Facebook"></a>
-            <a href="#" target="_blank"><img src="https://via.placeholder.com/35?text=I" alt="Instagram"></a>
+            <a href="#" target="_blank">
+              <img src="https://via.placeholder.com/24?text=F" alt="Facebook">
+            </a>
+            <a href="#" target="_blank">
+              <img src="https://via.placeholder.com/24?text=I" alt="Instagram">
+            </a>
           </div>
         </div>
+        <!-- Add more member profiles here -->
       </div>
     </section>
   </main>
