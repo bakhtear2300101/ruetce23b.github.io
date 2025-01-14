@@ -34,66 +34,6 @@
       z-index: 9999;
     }
 
-    .firework {
-      position: absolute;
-      width: 5px;
-      height: 5px;
-      background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,0,0,0.7) 70%, transparent 100%);
-      border-radius: 50%;
-      opacity: 0;
-      animation: explode 1s ease-out forwards;
-    }
-
-    @keyframes explode {
-      0% {
-        transform: scale(1);
-        opacity: 1;
-      }
-      100% {
-        transform: scale(4);
-        opacity: 0;
-      }
-    }
-  </style>
-</head>
-<body>
-  <!-- Your existing content -->
-
-  <!-- Fireworks Container -->
-  <div class="fireworks-container" id="fireworks-container"></div>
-
-  <script>
-    // JavaScript for Fireworks Effect
-    function triggerFireworks() {
-      const container = document.getElementById('fireworks-container');
-      for (let i = 0; i < 15; i++) {
-        const firework = document.createElement('div');
-        firework.classList.add('firework');
-        firework.style.left = Math.random() * 100 + '%';
-        firework.style.top = Math.random() * 100 + '%';
-        container.appendChild(firework);
-
-        // Remove the firework after animation
-        setTimeout(() => {
-          container.removeChild(firework);
-        }, 1000);
-      }
-    }
-
-    // Example: Trigger on sign-in button click
-    document.addEventListener('DOMContentLoaded', () => {
-      const signInButton = document.getElementById('sign-in-btn');
-      if (signInButton) {
-        signInButton.addEventListener('click', () => {
-          triggerFireworks();
-          alert('Signed in successfully!');
-        });
-      }
-    });
-  </script>
-
-  <!-- Example Sign-In Button -->
-  <button id="sign-in-btn" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 10px 20px; font-size: 1rem;">Sign In</button>
 
     /* Decorative Elements */
     .background-elements {
@@ -272,11 +212,11 @@
       <div class="profile-grid">
         <div class="profile-box">
           <img src="https://via.placeholder.com/200" alt="CR Image">
-          <h3>A.B.M. FAHIM AKHTAR</h3>
+          <h3>A.B.M. FAHIM AKHTER</h3>
           <h4><strong>Roll:</strong> 2300089</h4>
           <div class="social-links">
-            <a href="#" target="_blank"><img src="https://via.placeholder.com/40?text=F" alt="Facebook"></a>
-            <a href="#" target="_blank"><img src="https://via.placeholder.com/40?text=I" alt="Instagram"></a>
+            <a href="#" target="_blank"><img src="image/facebook.jpg" alt="Facebook"></a>
+            <a href="#" target="_blank"><img src="image/instagra.jpg" alt="Instagram"></a>
           </div>
         </div>
         <div class="profile-box">
@@ -291,17 +231,6 @@
       </div>
     </section>
 
-    <!-- Developer Section -->
-    <section>
-      <h2>Developer</h2>
-      <hr class="section-line">
-      <div class="profile-grid">
-        <div class="profile-box">
-          <img src="image/2300101.jpg" alt="Developer Image">
-          <h3>S.M. BAKHTEAR MAHBUB</h3>
-        </div>
-      </div>
-    </section>
 
     <!-- Members Section -->
     <section>
