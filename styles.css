@@ -155,26 +155,18 @@ body {
 
 /* General Profile Grid Styling */
 .profile-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
-}
-
-/* Responsive Design for Desktop */
-@media (min-width: 769px) {
-  .profile-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
+  justify-content: center;
+  max-width: 1200px;
+  margin: auto;
 }
 
 /* Responsive Design for Mobile */
 @media (max-width: 768px) {
   .profile-grid {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: 1fr;
   }
 }
 
