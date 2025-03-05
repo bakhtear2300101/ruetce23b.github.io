@@ -117,18 +117,29 @@ body {
     );
   }
 }
+
 .developer-option {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center; /* For text alignment */
 }
+
 /* General Profile Grid Styling */
 .profile-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
+}
+
+/* Responsive Design for Desktop */
+@media (min-width: 769px) {
+  .profile-grid {
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+  }
 }
 
 /* Responsive Design for Mobile */
