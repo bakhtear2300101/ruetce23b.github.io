@@ -16,7 +16,7 @@
       color: #fff;
       background: linear-gradient(135deg, rgba(6, 90, 148, 0.3), rgba(6, 148, 121, 0.4));
       background-size: 250% 250%;
-      animation: gradientMove 10s ease infinite;
+      animation: gradientMove 15s ease infinite;
       overflow-x: hidden;
     }
 
@@ -24,6 +24,43 @@
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
+    }
+
+    /* Background Fireworks Animation */
+    .fireworks-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* Background Elements - Circles moving around */
+    .background-elements {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .background-elements span {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      animation: move 20s infinite ease-in-out;
+    }
+
+    @keyframes move {
+      0% { transform: translateY(0) rotate(0); }
+      50% { transform: translateY(-100px) rotate(180deg); }
+      100% { transform: translateY(0) rotate(360deg); }
     }
 
     /* Container for everything */
@@ -52,6 +89,12 @@
       width: 120px;
       height: 120px;
       margin-right: 20px;
+      animation: logoBounce 2s ease-in-out infinite;
+    }
+
+    @keyframes logoBounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
     }
 
     .logo-section h1 {
@@ -82,6 +125,12 @@
       color: white;
       text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
       margin-bottom: 20px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
     }
 
     .profile-grid {
@@ -100,6 +149,12 @@
       width: 300px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: boxIn 1s ease-out;
+    }
+
+    @keyframes boxIn {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
     }
 
     .profile-box:hover {
@@ -112,6 +167,12 @@
       height: 150px;
       border-radius: 50%;
       margin-bottom: 15px;
+      animation: rotateImage 5s linear infinite;
+    }
+
+    @keyframes rotateImage {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
 
     .profile-box h3 {
@@ -186,16 +247,25 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- Header -->
-    <header>
-      <div class="logo-section">
-        <img src="image/RUET_logo.png" alt="RUET Logo">
-        <h1>RUET CE 23(B)</h1>
-      </div>
-      <p class="welcome-message">We Welcome You to the Department of Civil Engineering 23 Series Section B</p>
-    </header>
+  <!-- Background Decorative Elements -->
+  <div class="background-elements">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 
+  <!-- Header -->
+  <header>
+    <div class="logo-section">
+      <img src="image/RUET_logo.png" alt="RUET Logo">
+      <h1>RUET CE 23(B)</h1>
+    </div>
+    <p class="welcome-message">We Welcome You to the Department of Civil Engineering 23 Series Section B</p>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
     <!-- Class Representatives Section -->
     <section>
       <h2>Class Representatives</h2>
@@ -238,11 +308,12 @@
         </div>
       </div>
     </section>
-  </div>
+  </main>
 
   <!-- Footer -->
   <footer>
     &copy; 2024 Department of Civil Engineering. All rights reserved.
   </footer>
+
 </body>
 </html>
