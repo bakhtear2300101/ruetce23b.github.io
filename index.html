@@ -14,10 +14,11 @@
       margin: 0;
       padding: 0;
       color: #fff;
-      background: linear-gradient(135deg, rgba(6, 90, 148, 0.3), rgba(6, 148, 121, 0.4));
+      background: linear-gradient(135deg, rgba(6, 90, 148, 0.6), rgba(6, 148, 121, 0.6));
       background-size: 250% 250%;
       animation: gradientMove 15s ease infinite;
       overflow-x: hidden;
+      height: 100vh;
     }
 
     @keyframes gradientMove {
@@ -26,18 +27,7 @@
       100% { background-position: 0% 50%; }
     }
 
-    /* Background Fireworks Animation */
-    .fireworks-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 9999;
-    }
-
-    /* Background Elements - Circles moving around */
+    /* Background Decorative Elements */
     .background-elements {
       position: absolute;
       top: 0;
@@ -72,7 +62,7 @@
       padding: 20px;
     }
 
-    /* Header section */
+    /* Header Section */
     header {
       padding: 30px;
       margin-bottom: 50px;
@@ -167,12 +157,6 @@
       height: 150px;
       border-radius: 50%;
       margin-bottom: 15px;
-      animation: rotateImage 5s linear infinite;
-    }
-
-    @keyframes rotateImage {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
     }
 
     .profile-box h3 {
@@ -258,7 +242,7 @@
   <!-- Header -->
   <header>
     <div class="logo-section">
-      <img src="image/RUET logo.png" alt="RUET Logo">
+      <img src="image/RUET_logo.png" alt="RUET Logo">
       <h1>RUET CE 23(B)</h1>
     </div>
     <p class="welcome-message">We Welcome You to the Department of Civil Engineering 23 Series Section B</p>
@@ -312,7 +296,7 @@
 
   <!-- Footer -->
   <footer>
-    &copy; 2024 Department of Civil Engineering. All rights reserved.
+    &copy; 2024 Department of Civil Engineering 23 Series Section B. All rights reserved.
   </footer>
 
 </body>
