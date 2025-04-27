@@ -176,7 +176,23 @@ body {
   text-align: center;
   font-size: 1em;
 }
+.members-section {
+  display: grid;
+  gap: 10px; /* Spacing between items */
+}
 
+.member {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Desktop-specific styles */
+@media (min-width: 1024px) {
+  .members-section {
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  }
+}
 /* Buttons */
 .button {
   display: inline-block;
